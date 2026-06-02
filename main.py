@@ -49,26 +49,49 @@ def get_text(prop, prop_type="rich_text"):
             return str(prop["number"] or "")
         elif prop_type == "select":
             return prop["select"]["name"] if prop.get("select") else ""
+        elif prop_type == "multi_select":
+            return ", ".join([i["name"] for i in prop.get("multi_select", [])])
         elif prop_type == "date":
             return prop["date"]["start"] if prop.get("date") else ""
+        elif prop_type == "files":
+            files = prop.get("files", [])
+            return files[0]["file"]["url"] if files else "—"
     except (KeyError, IndexError, TypeError):
         return "—"
 
 
 def format_message(props):
-    fio = get_text(props.get("1 Ф.И.Ш.", {}), "title")
-    lavozim = get_text(props.get("Лавозим", {}), "rich_text")
-    telefon = get_text(props.get("2 Телефон (шахсий)", {}), "phone_number")
-    pinfl = get_text(props.get("7 ПИНФЛ", {}), "rich_text")
-    sana = get_text(props.get("5 Иш бошлаган сана", {}), "date")
+    fio = get_text(props.get("Ф.И.Ш.", {}), "title")
+    telefon = get_text(props.get("Телефон (шахсий)", {}), "phone_number")
+    telefon_oila = get_text(props.get("Телефон (оила аъзоси)", {}), "phone_number")
+    tug_sana = get_text(props.get("Туғилган санаси", {}), "date")
+    ish_sana = get_text(props.get("Иш бошлаган сана", {}), "date")
+    manzil = get_text(props.get("Яшаш манзили", {}), "rich_text")
+    pinfl = get_text(props.get("ПИНФЛ", {}), "rich_text")
+    pasport = get_text(props.get("Паспорт S/N", {}), "rich_text")
+    plastik = get_text(props.get("Пластик карта рақами", {}), "rich_text")
+    malumot = get_text(props.get("Маълумоти", {}), "select")
+    oila = get_text(props.get("Оилавий аҳволи", {}), "select")
+    tillar = get_text(props.get("Чет тиллари", {}), "multi_select")
+    oldin = get_text(props.get("Олдин ишлаган жой", {}), "rich_text")
+    foto = get_text(props.get("Фото", {}), "files")
 
     return (
-        f"✅ <b>Yangi anketa!</b>\n\n"
-        f"👤 <b>F.I.Sh.:</b> {fio}\n"
-        f"💼 <b>Lavozim:</b> {lavozim}\n"
-        f"📞 <b>Telefon:</b> {telefon}\n"
-        f"🪪 <b>PINFL:</b> {pinfl}\n"
-        f"📅 <b>Ish boshlagan:</b> {sana}\n"
+        f"✅ <b>Янги анкета!</b>\n\n"
+        f"👤 <b>Ф.И.Ш.:</b> {fio}\n"
+        f"📞 <b>Телефон:</b> {telefon}\n"
+        f"👨‍👩‍👧 <b>Оила телефони:</b> {telefon_oila}\n"
+        f"🎂 <b>Туғилган:</b> {tug_sana}\n"
+        f"📅 <b>Иш бошлаган:</b> {ish_sana}\n"
+        f"🏠 <b>Манзил:</b> {manzil}\n"
+        f"🪪 <b>ПИНФЛ:</b> {pinfl}\n"
+        f"📄 <b>Паспорт:</b> {pasport}\n"
+        f"💳 <b>Пластик:</b> {plastik}\n"
+        f"🎓 <b>Маълумот:</b> {malumot}\n"
+        f"👪 <b>Оилавий:</b> {oila}\n"
+        f"🌐 <b>Тиллар:</b> {tillar}\n"
+        f"🏢 <b>Олдин ишлаган:</b> {oldin}\n"
+        f"🖼 <b>Фото:</b> {foto}\n"
     )
 
 
