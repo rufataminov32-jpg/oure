@@ -67,13 +67,13 @@ def format_message(props):
     tug_sana = get_text(props.get("4 Туғилган санаси", {}), "date")
     ish_sana = get_text(props.get("5 Иш бошлаган сана", {}), "date")
     manzil = get_text(props.get("6 Яшаш манзили (Туман, МФЙ, Кўча, уй)", {}), "rich_text")
-    pinfl = get_text(props.get("7 ПИНФЛ", {}), "rich_text")
+    pinfl = get_text(props.get("7 ПИНФЛ", {}), "number")
     pasport = get_text(props.get("8 Паспорт S/N", {}), "rich_text")
     plastik = get_text(props.get("9 Пластик карта рақами", {}), "number")
     malumot = get_text(props.get("10 Маълумоти", {}), "select")
     oila = get_text(props.get("11 Оилавий аҳволи", {}), "select")
     tillar = get_text(props.get("12 Чет тиллари", {}), "multi_select")
-    oldin = get_text(props.get("13 Олдин ишлаган жой", {}), "rich_text")
+    oldin = get_text(props.get("13 Олдин ишлаган жой (ташкилот, лавозим)", {}), "rich_text")
     foto = get_text(props.get("14 фото", {}), "files")
 
     return (
