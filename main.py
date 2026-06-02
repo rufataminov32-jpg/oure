@@ -77,21 +77,24 @@ def format_message(props):
     foto = get_text(props.get("14 фото", {}), "files")
 
     return (
-        f"✅ <b>Янги анкета!</b>\n\n"
-        f"👤 <b>Ф.И.Ш.:</b> {fio}\n"
-        f"📞 <b>Телефон:</b> {telefon}\n"
-        f"👨‍👩‍👧 <b>Оила телефони:</b> {telefon_oila}\n"
-        f"🎂 <b>Туғилган:</b> {tug_sana}\n"
-        f"📅 <b>Иш бошлаган:</b> {ish_sana}\n"
-        f"🏠 <b>Манзил:</b> {manzil}\n"
-        f"🪪 <b>ПИНФЛ:</b> {pinfl}\n"
-        f"📄 <b>Паспорт:</b> {pasport}\n"
-        f"💳 <b>Пластик:</b> {plastik}\n"
+        f"🆕 <b>ЯНГИ ХОДИМ АНКЕТАСИ</b>\n"
+        f"━━━━━━━━━━━━━━━━━\n\n"
+        f"👤 <b>Ф.И.Ш.</b>\n{fio}\n\n"
+        f"📞 <b>Телефон</b>\n{telefon}\n\n"
+        f"👨‍👩‍👧 <b>Оила телефони</b>\n{telefon_oila}\n\n"
+        f"🎂 <b>Туғилган сана</b>\n{tug_sana}\n\n"
+        f"📅 <b>Иш бошлаган сана</b>\n{ish_sana}\n\n"
+        f"🏠 <b>Манзил</b>\n{manzil}\n\n"
+        f"━━━━━━━━━━━━━━━━━\n"
+        f"🪪 <b>ПИНФЛ:</b> <code>{pinfl}</code>\n"
+        f"📄 <b>Паспорт:</b> <code>{pasport}</code>\n"
+        f"💳 <b>Пластик:</b> <code>{plastik}</code>\n"
+        f"━━━━━━━━━━━━━━━━━\n\n"
         f"🎓 <b>Маълумот:</b> {malumot}\n"
-        f"👪 <b>Оилавий:</b> {oila}\n"
-        f"🌐 <b>Тиллар:</b> {tillar}\n"
-        f"🏢 <b>Олдин ишлаган:</b> {oldin}\n"
-        f"🖼 <b>Фото:</b> {foto}\n"
+        f"👪 <b>Оилавий аҳвол:</b> {oila}\n"
+        f"🌐 <b>Тиллар:</b> {tillar}\n\n"
+        f"🏢 <b>Олдин ишлаган жой</b>\n{oldin}\n\n"
+        f"🖼 <b>Фото:</b> {foto}"
     )
 
 
