@@ -77,14 +77,14 @@ def format_message(props):
     foto = get_text(props.get("14 фото", {}), "files")
 
     return (
-        f"🆕 <b>ЯНГИ ХОДИМ АНКЕТАСИ</b>\n"
+        f"🆕 <b>ХОДИМ АНКЕТАСИ</b>\n"
         f"━━━━━━━━━━━━━━━━━\n\n"
         f"👤 <b>Ф.И.Ш.</b>\n{fio}\n\n"
         f"📞 <b>Телефон</b>\n{telefon}\n\n"
-        f"👨‍👩‍👧 <b>Оила телефони</b>\n{telefon_oila}\n\n"
-        f"🎂 <b>Туғилган сана</b>\n{tug_sana}\n\n"
-        f"📅 <b>Иш бошлаган сана</b>\n{ish_sana}\n\n"
-        f"🏠 <b>Манзил</b>\n{manzil}\n\n"
+        f"👨‍👩‍👧 <b>Оила телефони</b>\n{telefon_oila}\n"
+        f"🎂 <b>Туғилган сана</b>\n{tug_sana}\n"
+        f"📅 <b>Иш бошлаган сана</b>\n{ish_sana}\n"
+        f"🏠 <b>Манзил</b>\n{manzil}\n"
         f"━━━━━━━━━━━━━━━━━\n"
         f"🪪 <b>ПИНФЛ:</b> <code>{pinfl}</code>\n"
         f"📄 <b>Паспорт:</b> <code>{pasport}</code>\n"
