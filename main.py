@@ -61,20 +61,20 @@ def get_text(prop, prop_type="rich_text"):
 
 
 def format_message(props):
-    fio = get_text(props.get("Ф.И.Ш.", {}), "title")
-    telefon = get_text(props.get("Телефон (шахсий)", {}), "phone_number")
-    telefon_oila = get_text(props.get("Телефон (оила аъзоси)", {}), "phone_number")
-    tug_sana = get_text(props.get("Туғилган санаси", {}), "date")
-    ish_sana = get_text(props.get("Иш бошлаган сана", {}), "date")
-    manzil = get_text(props.get("Яшаш манзили", {}), "rich_text")
-    pinfl = get_text(props.get("ПИНФЛ", {}), "rich_text")
-    pasport = get_text(props.get("Паспорт S/N", {}), "rich_text")
-    plastik = get_text(props.get("Пластик карта рақами", {}), "rich_text")
-    malumot = get_text(props.get("Маълумоти", {}), "select")
-    oila = get_text(props.get("Оилавий аҳволи", {}), "select")
-    tillar = get_text(props.get("Чет тиллари", {}), "multi_select")
-    oldin = get_text(props.get("Олдин ишлаган жой", {}), "rich_text")
-    foto = get_text(props.get("Фото", {}), "files")
+    fio = get_text(props.get("1 Ф.И.Ш.", {}), "title")
+    telefon = get_text(props.get("2 Телефон (шахсий)", {}), "phone_number")
+    telefon_oila = get_text(props.get("3 Телефон (оила аъзоси)", {}), "phone_number")
+    tug_sana = get_text(props.get("4 Туғилган санаси", {}), "date")
+    ish_sana = get_text(props.get("5 Иш бошлаган сана", {}), "date")
+    manzil = get_text(props.get("6 Яшаш манзили (Туман, МФЙ, Кўча, уй)", {}), "rich_text")
+    pinfl = get_text(props.get("7 ПИНФЛ", {}), "rich_text")
+    pasport = get_text(props.get("8 Паспорт S/N", {}), "rich_text")
+    plastik = get_text(props.get("9 Пластик карта рақами", {}), "number")
+    malumot = get_text(props.get("10 Маълумоти", {}), "select")
+    oila = get_text(props.get("11 Оилавий аҳволи", {}), "select")
+    tillar = get_text(props.get("12 Чет тиллари", {}), "multi_select")
+    oldin = get_text(props.get("13 Олдин ишлаган жой", {}), "rich_text")
+    foto = get_text(props.get("14 фото", {}), "files")
 
     return (
         f"✅ <b>Янги анкета!</b>\n\n"
